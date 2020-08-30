@@ -20,6 +20,14 @@ def get_games(params):
 
     return games
 
+def get_game_data(app_id):
+    page = get_html(URL + 'app/', app_id)
+
+    soup = BeautifulSoup(page, 'html.parser')
+
+    print(page)
+
+
 def get_tags():
     page = get_html(URL + 'tag/browse', {})
 
@@ -86,4 +94,4 @@ def get_html(url, params):
 
 
 if __name__ == '__main__':
-    tags = get_tags()
+    get_game_data('730')

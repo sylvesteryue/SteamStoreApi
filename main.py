@@ -3,6 +3,7 @@ from flask_restful import Api
 
 from resources.tags import Tag, TagsList
 from resources.genre import Genre, GenreList
+from resources.specials import Specials
 
 app = Flask(__name__)
 api = Api(app)
@@ -11,6 +12,7 @@ api.add_resource(TagsList, '/tags')
 api.add_resource(Tag, '/tags/<string:tag_id>')
 api.add_resource(GenreList, '/genre')
 api.add_resource(Genre, '/genre/<string:genre>')
+api.add_resource(Specials, '/specials')
 
 
 
